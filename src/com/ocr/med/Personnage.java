@@ -30,24 +30,25 @@ public abstract class Personnage {
             force = 0;
         }
     }
+    //methode pour ajouter d'agilite a un joueur
     protected void gagneAgilite(int quantite){
         agilite+=quantite;
     }
+    //méthode pour ajouter des points de vie à un joueur
     protected void boirePotionDeVie (int quantite) {
-        int v=niveau*5;
+        int v=niveau*5;//ce variable pour ne pas depasser le vie de depart
         vie += quantite;
         if (vie > v) vie = v;
     }
+    //une methode pour savoir si le joueur est vivant ou non
     protected boolean estVivant () {
         if(this.getVie()<=0)
             return true;
         else{
             return false;}
     }
+    //une methode pour charger les armes tour par tour
     public abstract void changerArme (Arme nvArme);
-    protected Arme getArme () {
-        return arme;
-    }
     public abstract String toString () ;
     public void afficheEtat(){
         System.out.print("Joueur "+numeroJoueur+" ("+vie+" vitalité)");
@@ -59,7 +60,9 @@ public abstract class Personnage {
     public void setNiveau(int niveau) {
         this.niveau = niveau;
     }
-
+    protected Arme getArme () {
+        return arme;
+    }
     public int getNumeroJoueur() {
         return numeroJoueur;
     }
