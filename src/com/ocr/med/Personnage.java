@@ -55,7 +55,7 @@ public abstract class Personnage {
     public int getNiveau() {
         return niveau;
     }
-
+//les setters et getters
     public void setNiveau(int niveau) {
         this.niveau = niveau;
     }
